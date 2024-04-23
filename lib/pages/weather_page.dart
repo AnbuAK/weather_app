@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:weather_app/models/weather_models.dart';
 import 'package:weather_app/services/weather_service.dart';
-import 'package:dotted_line/dotted_line.dart';
+
 
 
 class WeatherPage extends StatefulWidget {
