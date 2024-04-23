@@ -36,7 +36,7 @@ class _WeatherPageState extends State<WeatherPage> {
 
   String getWeatherAnimation(String? mainCondition){
     if (mainCondition == null )
-      return 'assets/mainload.json';
+      return 'assets/sunny.json';
 
       switch (mainCondition?.toLowerCase()){
         case 'clouds':
@@ -60,7 +60,7 @@ class _WeatherPageState extends State<WeatherPage> {
         case 'clear':
           return 'assets/sunny.json';
         default: 
-          return 'assets/mainload.json';
+          return 'assets/loading.json';
     }
 
   }
@@ -82,13 +82,10 @@ class _WeatherPageState extends State<WeatherPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
               const Icon(Icons.location_on_sharp,
               color: Colors.grey,
               size: 40),
-              const SizedBox(width: 10), // Add spacing between icon and text
+              const SizedBox(height: 10), // Add spacing between icon and text
                 // Display loading icon only when loading, else display city name
                 _isLoading
                     ? 
@@ -103,13 +100,13 @@ class _WeatherPageState extends State<WeatherPage> {
                           fontSize: 25,
                         ),
                       ),
-              ],
-            ),
           const SizedBox(height: 20,),
           Lottie.asset(getWeatherAnimation(_weather?.mainCondition)),
           const SizedBox(height: 30,),
           _isLoading
-                ? Lottie.asset('')
+                ? const CircularProgressIndicator(
+                      color: Color.fromARGB(255, 135, 134, 134),
+                    )
           :RichText(
             text: TextSpan(
               children: [
