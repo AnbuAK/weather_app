@@ -31,7 +31,7 @@ class SplashScreen extends StatelessWidget {
               height: 200,),
             ),
             SizedBox(height: 30,),
-            Text('Powered by ZingBizz',
+            Text('Developed by Tommas Shelby',
             style: GoogleFonts.lato(
                   textStyle: Theme.of(context).textTheme.displayLarge,
                   fontSize: 18,
